@@ -17,16 +17,12 @@ def add_new_todo():
     print("Incoming request with the following body", request_body)
     return jsonify(todos)
    
-
-
-
-
-
-
-
-
-
-
+@app.route('/todos/<posicion>', methods=['DELETE'])
+def delete_todo(posicion):
+    posicion = int(posicion)
+    todos.pop(posicion)
+    print("This is the position to delete:", posicion)
+    return jsonify(todos)
 
 
 
